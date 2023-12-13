@@ -3,7 +3,7 @@
 $remoteSecret = parse_ini_file('../yourSecrets.ini');
 $localSecret = parse_ini_file('../secrets.ini');
 
-$current = $remoteSecret;
+$current = $localSecret;
 
 $GLOBALS['config'] = array(
 
@@ -12,10 +12,10 @@ $GLOBALS['config'] = array(
     ),
 
     'mysql' => array(
-        'host'          => $current['mysql57.unoeuro.com'],
-        'username'      => $current['defiregutterpaatur_dk'],
-        'password'      => $current['dFBEwgAbGmnRck9tzx6H'],
-        'db_name'        => $current['defiregutterpaatur_dk_db']
+        'host'          => $current['db_host'],
+        'username'      => $current['db_user'],
+        'password'      => $current['db_password'],
+        'db_name'        => $current['db_name']
     ),
 
     'password' => array(

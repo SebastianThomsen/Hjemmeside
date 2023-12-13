@@ -23,7 +23,6 @@ class Database
         {
             die($e->getMessage());
         }
-        $this->_pdo->query("SET NAMES utf8");
     }
 
     public static function getInstance()
@@ -81,7 +80,6 @@ class Database
             {
                 $sql = "{$action} FROM {$table} WHERE {$field} {$operator} ?";
 
-
                 if (!$this->query($sql, array($value))->error())
                 {
                     return $this;
@@ -133,7 +131,7 @@ class Database
         return false;
     }
 
-    public function update($table, $id, $fields)
+    public function update($table, $where, $id, $fields) //#TODO: Why is it hard-coded to user_id?
     {
         $set    = '';
         $x      = 1;
@@ -150,7 +148,7 @@ class Database
             $x++;
         }
 
-        $sql = "UPDATE {$table} SET {$set} WHERE uid = {$id}";
+        $sql = "UPDATE {$table} SET {$set} WHERE {$where} = {$id}";
 
         if (!$this->query($sql, $fields)->error())
         {

@@ -35,9 +35,7 @@ if (Input::exists()) {
                 $user->create(array(
                     'username'  => Input::get('username'),
                     'password'  => Password::hash(Input::get('password')),
-                    'name'      => Input::get('name'),
-                    'joined'    => date('Y-m-d H:i:s'),
-                    'group_id'    => 1
+                    'name'      => Input::get('name')
                 ));
                 Session::flash('register-success', 'Thanks for registering! You can login now.');
                 Redirect::to('index.php');

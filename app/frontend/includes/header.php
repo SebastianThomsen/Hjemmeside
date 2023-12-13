@@ -10,10 +10,11 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="styles.css"> <!-- Link til CSS-filen -->
 
-  
+  <!-- Custom Assets 
 
+  <link rel="stylesheet" href="<?php //echo FRONTEND_ASSET . 'css/profile.css'; ?>">
+-->
   <style>
     .fakeimg {
       height: 200px;
@@ -24,3 +25,10 @@
 
 <body>
 
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <h1>My First <?php appName(); ?></h1>
+  <p>Resize this responsive page to see the effect!</p>
+  <?php if ($user->isLoggedIn()) : ?>
+    <h3 align="right">Hello, <?php echo $user->data()->name; ?></h3>
+  <?php endif; ?>
+</div>

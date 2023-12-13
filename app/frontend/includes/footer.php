@@ -1,5 +1,5 @@
 <div class="jumbotron text-center" style="margin-bottom:0">
-  <p></p>
+  <p>Footer</p>
 </div>
 
 </body>

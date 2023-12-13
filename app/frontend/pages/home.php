@@ -1,78 +1,40 @@
-<?php
-$servername = $current['db_host'];
-$username = $current['db_user'];
-$password = $current['db_password'];
-$database = $current['db_name'];
-
-// Opret forbindelse til din database
-$conn = new mysqli($servername, $username, $password, $database);
-
-// Tjek for forbindelsesfejl
-if ($conn->connect_error) {
-    die("Forbindelsesfejl: " . $conn->connect_error);
-}
-
-function hentAlleIndlæg() {
-    global $conn; // Gør forbindelsen tilgængelig inde i funktionen
-
-    // Set the character set to handle special characters
-    $conn->set_charset("utf8");
-
-    $query = "SELECT * FROM indlæg"; 
-
-    $resultat = $conn->query($query);
-
-    if ($resultat->num_rows > 0) {
-        $indlæg = array();
-
-        while ($row = $resultat->fetch_assoc()) {
-            $indlæg[] = $row;
-        }
-
-        return $indlæg;
-    } else {
-        return false;
-    }
-}
-?>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="poststyles.css">
-</head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div id="posts-container">
-                <div class="header">
-                    <h1></h1>
-                    <p>All posts will visible here</p>
-                    <p></p>
-                </div>
-
-                <?php
-                $alleIndlæg = hentAlleIndlæg();
-
-                if ($alleIndlæg) :
-                    foreach ($alleIndlæg as $indlæg) :
-                ?>
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title"><?php echo $indlæg['titel']; ?></h4>
-                            <p class="card-text"><?php echo $indlæg['indhold']; ?></p>
-                            <a href="comments.php?post_id=<?php echo $indlæg['indlæg_id']; ?>" class="btn btn-primary">Kommentér</a>
-                        </div>
-                    </div>
-                <?php
-                    endforeach;
-                else :
-                ?>
-                    <div class="alert alert-danger"><strong>No posts were found!</strong></div>
-                <?php endif;
-                ?>
-            </div>
-        </div>
+<div class="container" style="margin-top:30px">
+    <div class="row">
+      <div class="col-sm-4">
+        <h2>About Me</h2>
+        <h5>Photo of me:</h5>
+        <div class="fakeimg">Fake Image</div>
+        <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+        <h3>Some Links</h3>
+        <p>Lorem ipsum dolor sit ame.</p>
+        <ul class="nav nav-pills flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Active</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link disabled" href="#">Disabled</a>
+          </li>
+        </ul>
+        <hr class="d-sm-none">
+      </div>
+      <div class="col-sm-8">
+        <h2>TITLE HEADING</h2>
+        <h5>Title description, Dec 7, 2017</h5>
+        <div class="fakeimg">Fake Image</div>
+        <p>Some text..</p>
+        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+        <br>
+        <h2>TITLE HEADING</h2>
+        <h5>Title description, Sep 2, 2017</h5>
+        <div class="fakeimg">Fake Image</div>
+        <p>Some text..</p>
+        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+      </div>
     </div>
-</body>
-</html>
+  </div>

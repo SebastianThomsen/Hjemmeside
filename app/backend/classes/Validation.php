@@ -5,12 +5,13 @@ class Validation
     private $_passed = false,
             $_optional = false,
             $_errors = array(),
-            $_db     = null;
+            $_db     = null,
+            $_user   = null;
 
     public function __construct()
     {
         $this->_db = Database::getInstance();
-        $this->_user = new User;
+        $this->_user = new User();
     }
 
     public function check($source, $items = array())
@@ -92,8 +93,7 @@ class Validation
                             break;
 
                         case 'verify':
-                            $check = $this->_db->get($rule_value, array($item, '=', $value));
-
+                            
                             if (! Password::check($value, $this->_user->data()->password))
                             {
                                 $this->addError("Wrong Current Password!.");
