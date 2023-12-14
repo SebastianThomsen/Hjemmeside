@@ -1,18 +1,41 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Page Title</title>
+  <link rel="stylesheet" type="text/css" href="navstyles.css">
+</head>
+<body>
+
+<!-- Your existing navigation code goes here -->
+
+</body>
+</html>
+
+
 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  <a class="navbar-brand" href="index.php">App Name</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
-      <?php if ($user->isLoggedIn()) : ?>
         <li class="nav-item">
           <a class="nav-link" href="index.php">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="forum.php">Forum</a>
+          <a class="nav-link" href="forum.php">Tilbud</a>
         </li>
-      <?php endif; ?>
+        <li class="nav-item">
+          <a class="nav-link" href="forum.php">El-artikler</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="forum.php">Omkring os</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="forum.php">Kontakt</a>
+        </li>
     </ul>
 
     <?php if ($user->isLoggedIn()) : ?>
