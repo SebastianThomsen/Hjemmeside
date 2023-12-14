@@ -6,6 +6,15 @@
   color: #000000 !important; /* Black text color */
   font-family: 'Sen', sans-serif !important; /* Apply the Sen font */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add drop shadow */
+  padding: 15px 0; /* Adjusted padding */
+}
+
+/* Style the navigation links */
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; /* Make sure the nav takes full width */
 }
 
 /* Style the brand link */
@@ -25,6 +34,8 @@
 /* Style the navigation links */
 .navbar-nav .nav-link {
   color: #000000 !important; /* Black text color for links */
+  font-size: 15px;
+  line-height: 2;
 }
 
 .navbar-nav .nav-link:hover {
@@ -65,4 +76,38 @@
     color: #ffffff !important;
     background-color: #007bff !important;
   }
+}
+
+/* Remove borders around the search button */
+.toggle-search,
+.toggle-cart {
+  border: none !important;
+  outline: none !important; /* Remove the outline on focus */
+  background-color: transparent !important; /* Transparent background */
+}
+
+.toggle-search img,
+.toggle-cart img {
+  filter: brightness(1); /* Adjust brightness for the hover effect */
+  transition: filter 0.3s ease; /* Add a smooth transition */
+}
+
+/* Remove borders around the search input */
+.search-input {
+  border: none !important;
+  outline: none !important; /* Remove the outline on focus */
+  box-shadow: none !important; /* Remove any box shadow on focus */
+}
+
+/* Highlight effect for the magnifying glass and shopping cart icons on hover */
+.toggle-search:hover,
+.toggle-cart:hover {
+  outline: none !important;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border: none;
+}
+
+.toggle-search:hover img,
+.toggle-cart:hover img {
+  filter: brightness(1.2); /* Adjust brightness for the hover effect */
 }
