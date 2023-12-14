@@ -6,12 +6,11 @@
     margin-bottom: 0;
   }
 
+  body { 
+    font-family: 'Sen', sans-serif; /* Use the appropriate font-family */ 
+  }
   .jumbotron h1 {
     font-size: 20px; /* Change this to your desired font size */
-  }
-
-  .jumbotron p {
-    font-size: 16px; /* Change this to your desired font size */
   }
 
   /* Style for the user greeting */
