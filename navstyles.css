@@ -1,0 +1,68 @@
+/* navstyles.css */
+
+/* Add the Sen font to the navbar */
+.navbar {
+  background-color: #ffffff !important; /* White background color */
+  color: #000000 !important; /* Black text color */
+  font-family: 'Sen', sans-serif !important; /* Apply the Sen font */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add drop shadow */
+}
+
+/* Style the brand link */
+.navbar-brand {
+  color: #000000 !important; /* Black text color for brand */
+}
+
+.navbar-brand:hover {
+  color: #000000 !important; /* Black text color on hover for brand */
+}
+
+/* Style the toggler button */
+.navbar-toggler-icon {
+  background-color: #000000 !important; /* Black color for the toggler icon */
+}
+
+/* Style the navigation links */
+.navbar-nav .nav-link {
+  color: #000000 !important; /* Black text color for links */
+}
+
+.navbar-nav .nav-link:hover {
+  color: #000000 !important; /* Black text color on hover for links */
+}
+
+/* Style the active link */
+.navbar-nav .nav-item.active .nav-link {
+  color: #ffffff !important; /* White text color for active link */
+  background-color: #007bff !important; /* Active link background color */
+}
+
+/* Style the glyphicon icons */
+.navbar-nav .nav-link .glyphicon {
+  margin-right: 5px !important; /* Adjust icon spacing */
+}
+
+/* Responsive styles for small screens */
+@media (max-width: 767px) {
+  /* Adjust background color and text color for the toggler button */
+  .navbar-toggler {
+    background-color: #007bff !important;
+    color: #ffffff !important;
+  }
+
+  /* Adjust background color for the collapsed navbar */
+  .navbar-collapse {
+    background-color: #ffffff !important;
+  }
+
+  /* Adjust text color for the collapsed links */
+  .navbar-collapse .nav-link {
+    color: #000000 !important;
+  }
+
+  /* Style the active link in the collapsed navbar */
+  .navbar-collapse .nav-item.active .nav-link {
+    color: #ffffff !important;
+    background-color: #007bff !important;
+  }
+}

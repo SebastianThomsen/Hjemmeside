@@ -1,0 +1,22 @@
+/* Custom Header Styles */
+.jumbotron {
+    background-color: #5EC1B7; /* Change this to your desired background color */
+    color: #fff; /* Change this to your desired text color */
+    padding: 10px;
+    margin-bottom: 0;
+  }
+
+  .jumbotron h1 {
+    font-size: 20px; /* Change this to your desired font size */
+  }
+
+  .jumbotron p {
+    font-size: 16px; /* Change this to your desired font size */
+  }
+
+  /* Style for the user greeting */
+  .jumbotron h3 {
+    font-size: 10px; /* Change this to your desired font size */
+    text-align: right;
+    margin-top: 10px;
+  }
