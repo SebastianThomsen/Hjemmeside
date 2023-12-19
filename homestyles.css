@@ -1,0 +1,77 @@
+/* Reset some default styles */
+body, h1, h2, h5, p {
+    margin: 0;
+    padding: 0;
+}
+
+/* Basic styling for the body */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Container styles */
+.image-container {
+    display: flex;
+}
+
+
+/* Responsive styles */
+@media (max-width: 576px) {
+    .col-sm-4 {
+        margin-top: 20px;
+    }
+}
+
+
+/* Header styles */
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    align-items: center;
+}
+
+.header img {
+    max-width: 100%;
+    height: 400px;
+}
+
+/* Discount box styles */
+.discount-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 40px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.white-box,
+.green-box {
+    display: flex; /* Add display: flex; to allow items to be on the same line */
+    margin-bottom: 10px; /* Adjust margin-bottom for spacing between images and boxes */
+    flex-wrap: wrap;
+}
+
+.white-box {
+    background-color: #fff;
+    color: #000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+.green-box {
+    background-color: #5EC1B7;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+  }
