@@ -13,7 +13,7 @@
 .navbar-nav {
   display: flex;
   justify-content: flex-start;
-  align-items: center;
+  /*align-items: center;*/
   width: 100%; /* Make sure the nav takes full width */
   padding-left: 15px;
 }
@@ -40,7 +40,7 @@
 }
 
 .container {
-  padding-left: 0px;
+  max-width: 100%;
 }
 
 .navbar-nav .nav-item {
@@ -57,9 +57,6 @@
   background-color: #007bff !important; /* Active link background color */
 }
 
-/* Style the glyphicon icons */
-.navbar-nav .nav-link .glyphicon {
-}
 
 /* Responsive styles for small screens */
 @media (max-width: 767px) {
