@@ -6,15 +6,16 @@
   color: #000000 !important; /* Black text color */
   font-family: 'Sen', sans-serif !important; /* Apply the Sen font */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add drop shadow */
-  padding: 15px 0; /* Adjusted padding */
+  padding: 15px 0 !important; /* Adjusted padding */
 }
 
 /* Style the navigation links */
 .navbar-nav {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   width: 100%; /* Make sure the nav takes full width */
+  padding-left: 15px;
 }
 
 /* Style the brand link */
@@ -38,6 +39,14 @@
   line-height: 2;
 }
 
+.container {
+  padding-left: 0px;
+}
+
+.navbar-nav .nav-item {
+  margin-right: 0px; /* Adjusted right margin for individual items */
+}
+
 .navbar-nav .nav-link:hover {
   color: #000000 !important; /* Black text color on hover for links */
 }
@@ -50,7 +59,6 @@
 
 /* Style the glyphicon icons */
 .navbar-nav .nav-link .glyphicon {
-  margin-right: 5px !important; /* Adjust icon spacing */
 }
 
 /* Responsive styles for small screens */
@@ -84,6 +92,7 @@
   border: none !important;
   outline: none !important; /* Remove the outline on focus */
   background-color: transparent !important; /* Transparent background */
+  margin-right: 10px !important;
 }
 
 .toggle-search img,
@@ -110,4 +119,40 @@
 .toggle-search:hover img,
 .toggle-cart:hover img {
   filter: brightness(1.2); /* Adjust brightness for the hover effect */
+}
+
+/* Styles for the dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  right: 0;
+  left: auto;
+}
+
+.dropdown-item {
+  display: block;
+  width: 100%;
+  padding: 0.5rem 1rem;
+  clear: both;
+  font-weight: 400;
+  color: #000;
+  text-align: inherit;
+  white-space: nowrap;
+  background-color: transparent;
+  border: none;
+}
+
+.dropdown-item:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+/* Styles for the profile icon link */
+.profile-icon-link {
+  padding: 10px; /* Adjust padding as needed */
+  margin-right: 10px;
+  cursor: pointer;
 }
