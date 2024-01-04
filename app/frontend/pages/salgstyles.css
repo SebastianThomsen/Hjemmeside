@@ -62,3 +62,14 @@ body {
     position: absolute;
     bottom: 10px;
 }
+
+.product:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Ændret box-shadow for at give en fremhævningseffekt */
+    transition: box-shadow 0.3s ease; /* Tilføjet overgang for en glattere effekt */
+}
+
+.product-link {
+    text-decoration: none; /* Fjern understregning fra links */
+    display: inline-block;
+}
+

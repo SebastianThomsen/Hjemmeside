@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="homestyles.css">
+    <title>Luksus EL</title>
 </head>
 <body>
 <div class="header">
@@ -20,7 +21,7 @@
     <div class="overlay">
         <div class="text-container">
             <p>Gå på opdagelse i den vilde elektriske verden</p>
-            <a href="#" class="rounded-button">Vis mere</a>
+            <a href="app/frontend/pages/salg.php" class="rounded-button">Vis mere</a>
         </div>
     </div>
 </body>
