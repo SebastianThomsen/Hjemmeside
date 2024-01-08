@@ -39,10 +39,10 @@
             <a class="nav-link" href="forum.php">Tilbud</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="forum.php">El-artikler</a>
+            <a class="nav-link" href="app/frontend/pages/salg.php">El-artikler</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="forum.php">Omkring os</a>
+            <a class="nav-link" href="app/frontend/pages/about.php">Omkring os</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="forum.php">Kontakt</a>
@@ -59,7 +59,7 @@
         <button class="toggle-cart my-2 my-sm-0">
           <img src="shopping-bag.png" alt="Shopping Cart" width="23" height="23">
         </button>
-        <?php if ($user->isLoggedIn()) : ?>
+        <?php if (isset($user) && $user->isLoggedIn()) : ?>
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a class="nav-link" href="profile.php">

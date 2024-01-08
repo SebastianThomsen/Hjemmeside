@@ -11,12 +11,10 @@
 <body>
 
   <div class="jumbotron text-center">
-    <p></p>
+    <p>&copy; 2024 Luksus El-Artikler. Alle rettigheder forbeholdes.</p>
   </div>
 
-  <footer>
-  <!-- Ingen tekst i footeren -->
-  </footer>
+  
 
 </body>
 

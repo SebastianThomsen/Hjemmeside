@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+}
+
+.product {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 10px;
+    text-align: left; /* Ændret til venstre-justering */
+    width: calc(25% - 20px); /* Ændret bredden til at være 25% minus marginen */
+    height: 625px;
+    box-sizing: border-box; /* Sørger for, at padding ikke påvirker elementets bredde */
+    position: relative; /* Tilføjet relativ position for at håndtere absolute positionering af tekst og pris */
+}
+
+.product img {
+    max-width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ccc;
+}
+
+.info-box {
+    background-color: #5EC1B7;
+    color: #fff;
+    padding: 5px;
+    margin: 5px 0;
+    width: 50%; /* Ændret bredden til 100% */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.product p {
+    text-align: left; /* Ændret til venstre-justering */
+    color: #555555;
+    font-size: 15px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* Antallet af linjer, før ellipsis vises */
+    -webkit-box-orient: vertical;
+}
+
+.product strong {
+    text-align: left; /* Ændret til venstre-justering */
+    color: black;
+    font-size: 25px;
+    position: absolute;
+    bottom: 35px; /* Afstand fra bunden af produktet */
+}
+
+.product p:last-child {
+    position: absolute;
+    bottom: 10px;
+}
+
+.product:hover {
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Ændret box-shadow for at give en fremhævningseffekt */
+    transition: box-shadow 0.3s ease; /* Tilføjet overgang for en glattere effekt */
+}
+
+.product-link {
+    text-decoration: none; /* Fjern understregning fra links */
+    display: inline-block;
+}
+
