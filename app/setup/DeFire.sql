@@ -50,20 +50,20 @@ INSERT INTO `groups` (`group_id`, `name`, `permissions`) VALUES
 --
 
 CREATE TABLE `users` (
-  `uid` int(11) NOT NULL,
-  `username` varchar(20) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `name` varchar(50) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `username` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_danish_ci NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_danish_ci NOT NULL,
+  `name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_danish_ci NOT NULL,
   `joined` datetime NOT NULL,
   `group_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`uid`, `username`, `password`, `name`, `joined`, `group_id`) VALUES
-(1, 'DeFire', '$2y$10$GUgKszEgNey8FtQKhNgnU.fwKtEjFyd4qT4He1rjXPNn5ZQumW7pC', 'DeFire', '2023-07-30 12:59:32', 1);
+INSERT INTO `users` (`user_id`, `username`, `password`, `name`, `joined`, `group_id`) VALUES
+(1, 'DeFire', 'DeFire', 'DeFire', '2023-07-30 12:59:32', 1);
 
 -- --------------------------------------------------------
 
@@ -73,7 +73,7 @@ INSERT INTO `users` (`uid`, `username`, `password`, `name`, `joined`, `group_id`
 
 CREATE TABLE `users_session` (
   `users_session_id` int(11) NOT NULL,
-  `uid` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `hash` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -102,7 +102,7 @@ ALTER TABLE `groups`
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
-  ADD PRIMARY KEY (`uid`),
+  ADD PRIMARY KEY (`user_id`),
   ADD KEY `users_ibfk_1` (`group_id`);
 
 --
@@ -110,14 +110,8 @@ ALTER TABLE `users`
 --
 ALTER TABLE `users_session`
   ADD PRIMARY KEY (`users_session_id`),
-  ADD KEY `users_session_ibfk_1` (`uid`);
+  ADD KEY `users_session_ibfk_1` (`user_id`);
 
---
--- Indexes for table `votes`
---
-ALTER TABLE `votes`
-  ADD PRIMARY KEY (`vote_id`),
-  ADD KEY `user_id` (`user_id`);
 
 --
 -- AUTO_INCREMENT for table `groups`
@@ -129,7 +123,7 @@ ALTER TABLE `groups`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
 -- AUTO_INCREMENT for table `users_session`
@@ -137,11 +131,6 @@ ALTER TABLE `users`
 ALTER TABLE `users_session`
   MODIFY `users_session_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
---
--- AUTO_INCREMENT for table `votes`
---
-ALTER TABLE `votes`
-  MODIFY `vote_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for table `users`
@@ -153,13 +142,7 @@ ALTER TABLE `users`
 -- Constraints for table `users_session`
 --
 ALTER TABLE `users_session`
-  ADD CONSTRAINT `users_session_ibfk_1` FOREIGN KEY (`uid`) REFERENCES `users` (`uid`);
-
---
--- Constraints for table `votes`
---
-ALTER TABLE `votes`
-  ADD CONSTRAINT `votes_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`uid`); -- Added comma here
+  ADD CONSTRAINT `users_session_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
 
 COMMIT;
 
