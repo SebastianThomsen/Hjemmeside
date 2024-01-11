@@ -42,7 +42,7 @@
             <a class="nav-link" href="salg.php">El-artikler</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="app/frontend/pages/about.php">Omkring os</a>
+            <a class="nav-link" href="about.php">Omkring os</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="forum.php">Kontakt</a>
