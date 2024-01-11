@@ -91,11 +91,11 @@ class User
                     if ($remember)
                     {
                         $hash       = Hash::unique();
-                        $hashCheck  = $this->_db->get('users_sessions', array('user_id', '=', $this->data()->user_id));
+                        $hashCheck  = $this->_db->get('users_session', array('user_id', '=', $this->data()->user_id));
 
                         if (!$hashCheck->count())
                         {
-                            $this->_db->insert('users_sessions', array(
+                            $this->_db->insert('users_session', array(
                                 'user_id'   => $this->data()->user_id,
                                 'hash'      => $hash
                             ));
@@ -140,7 +140,7 @@ class User
 
     public function logout()
     {
-        $this->_db->delete('users_sessions', array('user_id', '=', $this->data()->user_id));
+        $this->_db->delete('users_session', array('user_id', '=', $this->data()->user_id));
 
         Session::delete($this->_sessionName);
         Cookie::delete($this->_cookieName);
