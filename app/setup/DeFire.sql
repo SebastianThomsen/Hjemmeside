@@ -63,7 +63,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `name`, `joined`, `group_id`) VALUES
-(1, 'DeFire', 'DeFire', 'DeFire', '2023-07-30 12:59:32', 1);
+(1, 'DeFire', '$2y$10$ec47f881fa06a3adf0fabuFnaSafeEP/3JZjx.6Q4OHU59FOIEVO6', 'DeFire', '2023-07-30 12:59:32', 1);
 
 -- --------------------------------------------------------
 
