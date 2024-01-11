@@ -39,7 +39,7 @@
             <a class="nav-link" href="forum.php">Tilbud</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="app/frontend/pages/salg.php">El-artikler</a>
+            <a class="nav-link" href="salg.php">El-artikler</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="app/frontend/pages/about.php">Omkring os</a>
