@@ -81,7 +81,7 @@ CREATE TABLE `users_session` (
 
 -- --------------------------------------------------------
 
-CREATE TABLE `items` (
+CREATE TABLE `produkter` (
   `item_id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `description` text NOT NULL,
