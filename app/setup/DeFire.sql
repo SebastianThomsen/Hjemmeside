@@ -81,6 +81,22 @@ CREATE TABLE `users_session` (
 
 -- --------------------------------------------------------
 
+CREATE TABLE `items` (
+  `item_id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `description` text NOT NULL,
+  `price` decimal(10,2) NOT NULL,
+  `image` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+ALTER TABLE `items`
+  ADD PRIMARY KEY (`item_id`);
+  
+
+
+-- --------------------------------------------------------
+
 --
 -- Table structure for table `votes`
 --
