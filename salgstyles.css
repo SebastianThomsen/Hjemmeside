@@ -13,7 +13,7 @@ body {
 
 .product {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 10px;
+    margin: 5px 10px;
     padding: 10px;
     text-align: left; /* Ændret til venstre-justering */
     width: calc(25% - 20px); /* Ændret bredden til at være 25% minus marginen */

@@ -9,57 +9,37 @@
 <div class="container">
 
     <?php
-    // Array med produkter
-    $products = [
-        [
-            'name' => 'Produkt 1',
-            'image' => 'placeholder.jpg',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur 
-            adipiscing elit, sed do eiusmod tempor incididunt 
-            ut labore et dolore magna aliqua.',
-            'price' => 99
-        ],
-        [
-            'name' => 'Produkt 2',
-            'image' => 'placeholder.jpg',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur 
-            adipiscing elit, sed do eiusmod tempor incididunt 
-            ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur 
-            adipiscing elit, sed do eiusmod tempor incididunt 
-            ut labore et dolore magna aliqua.',
-            'price' => 49
-        ],
-        [
-            'name' => 'Produkt 3',
-            'image' => 'placeholder.jpg',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur 
-            adipiscing elit, sed do eiusmod tempor incididunt 
-            ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur 
-            adipiscing elit, sed do eiusmod tempor incididunt',
-            'price' => 79
-        ],
-        [
-            'name' => 'Produkt 4',
-            'image' => 'placeholder.jpg',
-            'description' => 'Lorem ipsum dolor sit amet, consectetur 
-            adipiscing elit, sed do eiusmod tempor incididunt 
-            ut labore et dolore magna aliqua.',
-            'price' => 79
-        ]
-    ];
+    // Opret forbindelse til databasen (erstat disse oplysninger med dine egne)
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "DeFire";
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+
+    // Tjek forbindelsen
+    if ($conn->connect_error) {
+        die("Forbindelse mislykkedes: " . $conn->connect_error);
+    }
+
+    // Hent produkter fra databasen
+    $sql = "SELECT item_id, name, description, price, image FROM produkter";
+    $result = $conn->query($sql);
 
     // Loop gennem produkter og generer HTML
-    foreach ($products as $product) {
+    while ($row = $result->fetch_assoc()) {
         echo '<div class="product">';
-        echo '<img src="' . $product['image'] . '" alt="' . $product['name'] . '">';
+        echo '<img src="' . $row['image'] . '" alt="' . $row['name'] . '">';
         echo '<div class="info-box">INKLUSIV LYSKILDE</div>';
-        echo '<p>' . $product['description'] . '</p>';
-        echo '<strong>' . $product['price'] . '.-</strong>';
+        echo '<p>' . $row['description'] . '</p>';
+        echo '<strong>' . $row['price'] . '.-</strong>';
         echo '<p>Lev. omk. tillægges</p>';
         echo '</div>';
     }
+
+    // Luk forbindelsen til databasen
+    $conn->close();
     ?>
 </div>
-
 </body>
 </html>
