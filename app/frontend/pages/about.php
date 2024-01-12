@@ -14,13 +14,13 @@ Luksus EL™ er en virksomhed med base i Kolding, der specialiserer sig i salg a
 
 Det hele startede i 2023, da vi besluttede at der var mangel på kvalitets produkter inden for el branchen </br></br>
 
-Vores mission er at dele vores kærlighed til el-arktikler</br></br>
+<b>Vores mission er at dele vores kærlighed til el-arktikler</br></br></b>
 
 Vi har distributionscentre i Europa, og alle varer der sælges på vores hjemmeside, er designet og konfigureret efter vores specifikationer.</br></br>
 
-HAR DU ET SPØRGSMÅL? Kontakt os venligst via vores kontakt side eller send os en e-mail på info@luksus-el.com.</br></br>
+<b>HAR DU ET SPØRGSMÅL?</b> Kontakt os venligst via vores kontakt side eller send os en e-mail på info@luksus-el.com.</br></br>
 
-Vi har et fantastisk kundesupportteam, der arbejder 7 dage om ugen for at hjælpe dig med alle dine spørgsmål. Vi ønsker, at du skal nyde din shoppingoplevelse! Tak fordi du valgte os! Kontakt: info@luksus-el.com</p>
+Vi har et <b>fantastisk kundesupportteam, der arbejder 7 dage om ugen </b>for at hjælpe dig med alle dine spørgsmål. Vi ønsker, at du skal nyde din shoppingoplevelse! Tak fordi du valgte os! </br>Kontakt: info@luksus-el.com</p>
     </section>
 
 </body>
