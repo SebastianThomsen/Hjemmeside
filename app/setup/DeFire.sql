@@ -90,7 +90,7 @@ CREATE TABLE `produkter` (
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-ALTER TABLE `items`
+ALTER TABLE `produkter`
   ADD PRIMARY KEY (`item_id`);
 
 INSERT INTO `items` (`item_id`, `name`, `description`, `price`, `image`, `created_at`) VALUES
