@@ -21,7 +21,7 @@
     <div class="overlay">
         <div class="text-container">
             <p>Gå på opdagelse i den vilde elektriske verden</p>
-            <a href="app/frontend/pages/salg.php" class="rounded-button">Vis mere</a>
+            <a href="salg.php" class="rounded-button">Vis mere</a>
         </div>
     </div>
 </body>

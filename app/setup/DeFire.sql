@@ -11,7 +11,6 @@ SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
@@ -21,7 +20,6 @@ SET time_zone = "+00:00";
 -- Database: `defire`
 --
 
-
 -- --------------------------------------------------------
 
 --
@@ -29,18 +27,12 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `groups` (
-  `group_id` int(11) NOT NULL,
+  `group_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
-  `permissions` text NOT NULL
+  `permissions` text NOT NULL,
+  PRIMARY KEY (`group_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `groups`
---
-
-INSERT INTO `groups` (`group_id`, `name`, `permissions`) VALUES
-(1, 'Standard User', ''),
-(2, 'Administrator', '{\"admin\": 1,\r\n\"moderator\" :1}');
 
 -- --------------------------------------------------------
 
@@ -55,15 +47,25 @@ CREATE TABLE `users` (
   `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_danish_ci NOT NULL,
   `name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_danish_ci NOT NULL,
   `joined` datetime NOT NULL,
-  `group_id` int(11) NOT NULL
+  `group_id` int(11) NOT NULL,
+  PRIMARY KEY (`user_id`),
+  FOREIGN KEY (`group_id`) REFERENCES `groups`(`group_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `users`
---
+START TRANSACTION;
+
+INSERT INTO `groups` (`group_id`, `name`, `permissions`) VALUES
+(1, 'Standard User', ''),
+(2, 'Administrator', '{\"admin\": 1,\r\n\"moderator\" :1}'),
+(3, 'New Group', '');
+
+COMMIT;
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `name`, `joined`, `group_id`) VALUES
 (1, 'DeFire', '$2y$10$ec47f881fa06a3adf0fabuFnaSafeEP/3JZjx.6Q4OHU59FOIEVO6', 'DeFire', '2023-07-30 12:59:32', 1);
+
+INSERT INTO `users` (`username`, `password`, `name`, `joined`, `group_id`) 
+VALUES ('newuser', 'password', 'New User', NOW(), 3);
 
 -- --------------------------------------------------------
 
@@ -89,21 +91,6 @@ CREATE TABLE `votes` (
   `value` tinyint(1) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
---
--- Indexes for table `groups`
---
-ALTER TABLE `groups`
-  ADD PRIMARY KEY (`group_id`);
-
-
---
--- Indexes for table `users`
---
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`user_id`),
-  ADD KEY `users_ibfk_1` (`group_id`);
 
 --
 -- Indexes for table `users_session`
@@ -131,12 +118,6 @@ ALTER TABLE `users`
 ALTER TABLE `users_session`
   MODIFY `users_session_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
-
---
--- Constraints for table `users`
---
-ALTER TABLE `users`
-  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`group_id`) REFERENCES `groups` (`group_id`);
 
 --
 -- Constraints for table `users_session`
