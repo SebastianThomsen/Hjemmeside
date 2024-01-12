@@ -93,7 +93,7 @@ CREATE TABLE `produkter` (
 ALTER TABLE `produkter`
   ADD PRIMARY KEY (`item_id`);
 
-INSERT INTO `items` (`item_id`, `name`, `description`, `price`, `image`, `created_at`) VALUES
+INSERT INTO `produkter` (`item_id`, `name`, `description`, `price`, `image`, `created_at`) VALUES
 (1, 'Item 1', 'This is item 1', 10.00, 'image1.jpg', CURRENT_TIMESTAMP),
 (2, 'Item 2', 'This is item 2', 20.00, 'image2.jpg', CURRENT_TIMESTAMP),
 (3, 'Item 3', 'This is item 3', 10.00, 'image3.jpg', CURRENT_TIMESTAMP),
