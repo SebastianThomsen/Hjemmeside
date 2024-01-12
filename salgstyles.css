@@ -9,6 +9,7 @@ body {
     flex-wrap: wrap;
     justify-content: space-around;
     margin: 20px;
+    max-width: 1535px;
 }
 
 .product {
