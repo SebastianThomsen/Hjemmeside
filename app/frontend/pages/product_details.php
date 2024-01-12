@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="product_detailsstyles.css">
     <title>Product Details</title>
+    <script>
+        function changeQuantity(amount) {
+            var quantityInput = document.getElementById('quantity');
+            quantityInput.value = parseInt(quantityInput.value) + amount;
+            validateQuantity(quantityInput);
+        }
+
+        function validateQuantity(input) {
+            if (parseInt(input.value) < 1) {
+                input.value = 1;
+            }
+        }
+    </script>
 </head>
 <body>
     <?php
@@ -36,8 +49,15 @@
             echo '<h2>' . $product['name'] . '</h2>';
             echo '<p>' . $product['description'] . '</p>';
             echo '<strong>' . $product['price'] . '.-</strong>';
-            echo '<p>Lev. omk. tillægges</p>';
-            echo '<button onclick="addToCart(' . $product['item_id'] . ')">Tilføj til kurv</button>';
+            echo '<div class="quantity-section">';
+            echo '<label for="quantity"></label>';
+            echo '<div class="quantity-controls">';
+            echo '<button onclick="changeQuantity(-1)">-</button>';
+            echo '<input type="number" id="quantity" name="quantity" value="1" min="1" oninput="validateQuantity(this)">';
+            echo '<button onclick="changeQuantity(1)">+</button>';
+            echo '</div>';
+            echo '</div>';
+            echo '<button onclick="addToCart(' . $product['item_id'] . ', document.getElementById(\'quantity\').value)">Tilføj til kurv</button>';
             echo '</div>';
             echo '</div>';
         } else {

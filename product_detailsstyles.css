@@ -1,20 +1,20 @@
 /* product_detailsstyles.css */
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Sen', sans-serif;
     margin: 0;
     padding: 0;
 }
 
 .product-details {
-    max-width: 800px;
-    margin: 0 auto;
+    max-width: 1200px;
+    margin: 20px; /* Tilføjet margin for at skabe afstand fra venstre kant */
     padding: 20px;
     display: flex;
 }
 
 .product-image img {
-    max-width: 100%;
+    max-width: 500px;
     height: auto;
 }
 
@@ -32,12 +32,39 @@ body {
 }
 
 .product-details strong {
-    color: #f00;
+    color: rgb(0, 0, 0);
     font-size: 18px;
 }
 
+.product-details .quantity-section {
+    margin-bottom: 10px;
+}
+
+.product-details .quantity-controls {
+    display: flex;
+    align-items: center;
+}
+
+.product-details .quantity-controls button {
+    background: none;
+    border: none;
+    padding: 5px 10px;
+    margin: 2px;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+}
+
+.product-details .quantity-controls input {
+    width: 50px;
+    text-align: center;
+    margin: 0 10px;
+    border: none;
+    padding: 5px; /* Tilføjet padding for at øge klikområdet */
+    outline: none; /* Fjernet den blå kant ved fokus */
+}
+
 .product-details button {
-    background-color: #4CAF50;
+    background-color: #FF4D00;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -46,5 +73,16 @@ body {
 }
 
 .product-details button:hover {
-    background-color: #45a049;
+    background-color: #FF7F00;
+}
+
+.product-details .quantity-controls button:hover {
+    background: none; /* Fjernet baggrundsfarven ved hover */
+    color: #333; /* Ændret tekstfarven ved hover til sort */
+}
+
+.product-details .quantity-controls input::-webkit-inner-spin-button,
+.product-details .quantity-controls input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
