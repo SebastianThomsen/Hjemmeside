@@ -74,3 +74,7 @@ body {
     display: inline-block;
 }
 
+
+.product-link:hover {
+    text-decoration: none !important; /* Fjern understregning på hover for produktlink */
+}

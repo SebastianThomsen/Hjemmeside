@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="salgstyles.css">
+    <link rel="stylesheet" type="text/css" href="product_detailsstyles.css">
     <title>Product Details</title>
 </head>
 <body>
@@ -31,12 +31,14 @@
             $product = $result->fetch_assoc();
             // Vis produktets detaljer her
             echo '<div class="product-details">';
-            echo '<img src="' . $product['image'] . '" alt="' . $product['name'] . '">';
+            echo '<div class="product-image"><img src="' . $product['image'] . '" alt="' . $product['name'] . '"></div>';
+            echo '<div class="details">';
             echo '<h2>' . $product['name'] . '</h2>';
             echo '<p>' . $product['description'] . '</p>';
             echo '<strong>' . $product['price'] . '.-</strong>';
             echo '<p>Lev. omk. tillægges</p>';
             echo '<button onclick="addToCart(' . $product['item_id'] . ')">Tilføj til kurv</button>';
+            echo '</div>';
             echo '</div>';
         } else {
             echo 'Produktet blev ikke fundet.';
