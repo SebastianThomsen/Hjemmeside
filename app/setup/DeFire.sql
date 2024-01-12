@@ -94,12 +94,12 @@ ALTER TABLE `produkter`
   ADD PRIMARY KEY (`item_id`);
 
 INSERT INTO `produkter` (`item_id`, `name`, `description`, `price`, `image`, `created_at`) VALUES
-(1, 'Item 1', 'This is item 1', 10.00, 'image1.jpg', CURRENT_TIMESTAMP),
-(2, 'Item 2', 'This is item 2', 20.00, 'image2.jpg', CURRENT_TIMESTAMP),
-(3, 'Item 3', 'This is item 3', 10.00, 'image3.jpg', CURRENT_TIMESTAMP),
-(4, 'Item 4', 'This is item 4', 20.00, 'image4.jpg', CURRENT_TIMESTAMP),
-(5, 'Item 5', 'This is item 5', 10.00, 'image5.jpg', CURRENT_TIMESTAMP),
-(6, 'Item 6', 'This is item 6', 20.00, 'image6.jpg', CURRENT_TIMESTAMP);
+(1, 'Item 1', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries', 10.00, 'placeholder.jpg', CURRENT_TIMESTAMP),
+(2, 'Item 2', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries', 10.00, 'placeholder.jpg', CURRENT_TIMESTAMP),
+(3, 'Item 3', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries', 10.00, 'placeholder.jpg', CURRENT_TIMESTAMP),
+(4, 'Item 4', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries', 1000.00, 'placeholder.jpg', CURRENT_TIMESTAMP),
+(5, 'Item 5', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries', 10.00, 'placeholder.jpg', CURRENT_TIMESTAMP),
+(6, 'Item 6', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries', 10.00, 'placeholder.jpg', CURRENT_TIMESTAMP);
 
 
 -- --------------------------------------------------------
