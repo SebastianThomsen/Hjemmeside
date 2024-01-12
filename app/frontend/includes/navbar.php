@@ -57,7 +57,9 @@
           <img src="loupe.png" alt="Search" width="20" height="20">
         </button>
         <button class="toggle-cart my-2 my-sm-0">
+          <a href="kurv.php">
           <img src="shopping-bag.png" alt="Shopping Cart" width="23" height="23">
+          </a>
         </button>
         <?php if (isset($user) && $user->isLoggedIn()) : ?>
           <ul class="navbar-nav ml-auto">
