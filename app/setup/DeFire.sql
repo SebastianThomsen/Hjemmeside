@@ -52,7 +52,6 @@ CREATE TABLE `users` (
   FOREIGN KEY (`group_id`) REFERENCES `groups`(`group_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-START TRANSACTION;
 
 INSERT INTO `groups` (`group_id`, `name`, `permissions`) VALUES
 (1, 'Standard User', ''),
@@ -60,6 +59,7 @@ INSERT INTO `groups` (`group_id`, `name`, `permissions`) VALUES
 (3, 'New Group', '');
 
 COMMIT;
+START TRANSACTION;
 
 INSERT INTO `users` (`user_id`, `username`, `password`, `name`, `joined`, `group_id`) VALUES
 (1, 'DeFire', '$2y$10$ec47f881fa06a3adf0fabuFnaSafeEP/3JZjx.6Q4OHU59FOIEVO6', 'DeFire', '2023-07-30 12:59:32', 1);
