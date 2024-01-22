@@ -1,8 +1,6 @@
 <?php
 require_once 'app/backend/core/Init.php';
 
-session_start();
-
 $connect = mysqli_connect("localhost", "root", "", "DeFire");
 
 if (isset($_POST['add_to_cart'])){

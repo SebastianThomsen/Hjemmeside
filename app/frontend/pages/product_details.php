@@ -19,6 +19,7 @@
         }
     </script>
 </head>
+
 <body>
     <?php
     // Opret forbindelse til databasen (erstat disse oplysninger med dine egne)
@@ -47,7 +48,7 @@
             echo '<div class="product-image"><img src="' . $product['image'] . '" alt="' . $product['name'] . '"></div>';
             echo '<div class="details">';
             echo '<h2>' . $product['name'] . '</h2>';
-            echo '<p>Varenummer: <?php echo $product['item_id']; ?></p>';
+            echo '<p>Varenummer: ' . $product['item_id'] . '</p>';
             echo '<strong>' . $product['price'] . '.-</strong>';
             echo '<div class="quantity-section">';
             echo '<label for="quantity"></label>';
@@ -72,9 +73,21 @@
     } else {
         echo 'Ingen produkt-id blev angivet.';
     }
+      // Luk forbindelsen til databasen
+      $conn->close();
+      ?>  
+<script>
+function addToCart(itemId, quantity) {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", 'app/backend/auth/cart.php?id=' + itemId, true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function() {
+        if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
+            alert(this.responseText);
+        }
+    }
+    xhr.send("quantity=" + quantity);
+}
 
-    // Luk forbindelsen til databasen
-    $conn->close();
-    ?>
 </body>
 </html>
