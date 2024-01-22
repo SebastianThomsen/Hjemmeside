@@ -20,7 +20,7 @@
 
 
 <div class="jumbotron text-center" style="margin-bottom:0">
-  <h1>Fri fragt ved køb over 400-, </h1>
+  <h1>Fri fragt ved køb over 400.- </h1>
  
   <?php if ($user->isLoggedIn()) : ?>
     <h3 align="right">Hello, <?php echo $user->data()->name; ?></h3>

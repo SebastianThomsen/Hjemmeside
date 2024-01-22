@@ -13,6 +13,30 @@ body {
     display: flex;
 }
 
+.description-box {
+    background-color: #5EC1B7;
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.description-box h3 {
+    color: white; /* Gør titlen hvid */
+    padding-left: 18px;
+    font-size: 40px;
+    padding-bottom: 20px;
+}
+
+.description-box p {
+    color: white;
+    font-size: 16px;
+    padding-left: 18px;
+    font-size: 20px;
+}
+
 .product-image img {
     max-width: 500px;
     height: auto;

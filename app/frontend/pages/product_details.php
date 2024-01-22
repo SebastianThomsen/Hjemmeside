@@ -47,7 +47,7 @@
             echo '<div class="product-image"><img src="' . $product['image'] . '" alt="' . $product['name'] . '"></div>';
             echo '<div class="details">';
             echo '<h2>' . $product['name'] . '</h2>';
-            echo '<p>' . $product['description'] . '</p>';
+            echo '<p>Varenummer: <?php echo $product['item_id']; ?></p>';
             echo '<strong>' . $product['price'] . '.-</strong>';
             echo '<div class="quantity-section">';
             echo '<label for="quantity"></label>';
@@ -59,6 +59,12 @@
             echo '</div>';
             echo '<button onclick="addToCart(' . $product['item_id'] . ', document.getElementById(\'quantity\').value)">Tilføj til kurv</button>';
             echo '</div>';
+            echo '</div>';
+
+            // Ny boks for produktbeskrivelsen
+            echo '<div class="description-box">';
+            echo '<h3>Produkt beskrivelse</h3>';
+            echo '<p>' . $product['description'] . '</p>';
             echo '</div>';
         } else {
             echo 'Produktet blev ikke fundet.';
