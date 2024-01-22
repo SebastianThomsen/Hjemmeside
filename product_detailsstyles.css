@@ -32,9 +32,8 @@ body {
 
 .description-box p {
     color: white;
-    font-size: 16px;
-    padding-left: 18px;
     font-size: 20px;
+    padding-left: 18px;
 }
 
 .product-image img {
@@ -51,10 +50,6 @@ body {
     color: #333;
 }
 
-.product-details p {
-    color: #666;
-}
-
 .product-details strong {
     color: rgb(0, 0, 0);
     font-size: 18px;
@@ -67,6 +62,19 @@ body {
 .product-details .quantity-controls {
     display: flex;
     align-items: center;
+}
+
+.price {
+    font-size: 30px;
+    color: #000000;
+    margin-top: 40px;
+    margin-bottom: 0;
+}
+
+.delivery-cost {
+    font-size: 16px;
+    color: #666;
+    margin-top: 0;
 }
 
 .product-details .quantity-controls button {
@@ -92,7 +100,6 @@ body {
     color: white;
     padding: 10px 20px;
     border: none;
-    border-radius: 4px;
     cursor: pointer;
 }
 
