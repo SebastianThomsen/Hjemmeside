@@ -37,6 +37,7 @@ body {
     width: 50%; /* Ændret bredden til 100% */
     font-weight: bold;
     margin-bottom: 15px;
+    margin-top: 15px;
 }
 
 .product p {
