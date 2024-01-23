@@ -82,3 +82,34 @@ body {
     color: #ffffff; 
     text-decoration: none; 
 }
+
+
+@media only screen and (max-width: 992px) {
+
+    .box-container {
+        flex-direction: column;
+    }
+
+    .white-box, .green-box {
+        width: 100%;
+    }
+
+    .white-box {
+        font-size: 60px;
+    }
+    
+    .green-box {
+        font-size: 100px;
+    }
+
+    .text-container {
+        font-size: 25px;
+        padding: 10px;
+    }
+
+    .rounded-button {
+        padding: 10px 40px;
+        font-size: 16px;
+    }
+}
+

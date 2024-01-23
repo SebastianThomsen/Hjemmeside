@@ -58,31 +58,6 @@
 }
 
 
-/* Responsive styles for small screens */
-@media (max-width: 767px) {
-  /* Adjust background color and text color for the toggler button */
-  .navbar-toggler {
-    background-color: #007bff !important;
-    color: #ffffff !important;
-  }
-
-  /* Adjust background color for the collapsed navbar */
-  .navbar-collapse {
-    background-color: #ffffff !important;
-  }
-
-  /* Adjust text color for the collapsed links */
-  .navbar-collapse .nav-link {
-    color: #000000 !important;
-  }
-
-  /* Style the active link in the collapsed navbar */
-  .navbar-collapse .nav-item.active .nav-link {
-    color: #ffffff !important;
-    background-color: #007bff !important;
-  }
-}
-
 /* Remove borders around the search button */
 .toggle-search,
 .toggle-cart {
@@ -152,4 +127,13 @@
   padding: 10px; /* Adjust padding as needed */
   margin-right: 10px;
   cursor: pointer;
+}
+
+
+/* Responsive styles for small screens */
+@media only screen and (max-width: 600px) {
+  .navbar-nav .nav-link {
+    font-size: 10px;
+  }
+
 }
