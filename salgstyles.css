@@ -26,7 +26,7 @@ body {
 .product img {
     max-width: 100%;
     height: auto;
-    border-bottom: 1px solid #ccc;
+
 }
 
 .info-box {
@@ -50,6 +50,13 @@ body {
     display: -webkit-box;
     -webkit-line-clamp: 3; /* Antallet af linjer, før ellipsis vises */
     -webkit-box-orient: vertical;
+}
+
+.product h3 {
+    color: #000000; /* Ændret farven til en blå nuance */
+    font-size: 18px; /* Justeret fontstørrelsen */
+    margin-bottom: 15px; /* Justeret marginen for at give plads til beskrivelsen */
+    font-family: 'Sen', sans-serif 
 }
 
 .product strong {

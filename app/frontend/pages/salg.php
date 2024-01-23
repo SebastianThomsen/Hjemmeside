@@ -32,7 +32,8 @@
         echo '<div class="product">';
         echo '<a href="product_details.php?item_id=' . $row['item_id'] . '" class="product-link">';
         echo '<img src="' . $row['image'] . '" alt="' . $row['name'] . '">';
-        echo '<div class="info-box">INKLUSIV LYSKILDE</div>';
+        echo '<div class="info-box"></div>';
+        echo '<h3>' . $row['name'] . '</h3>';
         echo '<p>' . $row['description'] . '</p>';
         echo '<strong>' . $row['price'] . '.-</strong>';
         echo '<p>Lev. omk. tillægges</p>';
