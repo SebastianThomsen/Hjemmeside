@@ -1,5 +1,6 @@
 <?php
 require_once 'app/backend/core/Init.php';
+require_once 'app/backend/auth/cart.php';
 
 define('BACKEND_AUTH',  'app/backend/auth/');
 define('FRONTEND_BASE', 'app/frontend/');

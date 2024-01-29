@@ -34,6 +34,9 @@
 
 <body>
     <?php
+
+    require_once 'app/backend/auth/cart.php';
+    
     // Opret forbindelse til databasen (erstat disse oplysninger med dine egne)
     $servername = "localhost";
     $username = "root";

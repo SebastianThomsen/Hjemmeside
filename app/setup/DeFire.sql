@@ -81,6 +81,16 @@ CREATE TABLE `users_session` (
 
 -- --------------------------------------------------------
 
+CREATE TABLE `cart` (
+  `cart_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `item_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+
+
 CREATE TABLE `produkter` (
   `item_id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
@@ -111,6 +121,10 @@ INSERT INTO `produkter` (`item_id`, `name`, `description`, `price`, `image`, `cr
 (15, 'Stikdåse med 6 udtag', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries', 450.00, 'item15.jpg', CURRENT_TIMESTAMP),
 (16, 'Stikdåse med 10 udtag', 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries', 550.00, 'item16.jpg', CURRENT_TIMESTAMP);
 
+
+
+
+
 -- --------------------------------------------------------
 
 --
@@ -131,6 +145,8 @@ ALTER TABLE `users_session`
   ADD PRIMARY KEY (`users_session_id`),
   ADD KEY `users_session_ibfk_1` (`user_id`);
 
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`cart_id`);
 
 --
 -- AUTO_INCREMENT for table `groups`
@@ -150,6 +166,8 @@ ALTER TABLE `users`
 ALTER TABLE `users_session`
   MODIFY `users_session_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
+ALTER TABLE `cart`
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Constraints for table `users_session`

@@ -1,4 +1,5 @@
 <?php
+require_once 'app/backend/auth/cart.php';
 
 class User
 {

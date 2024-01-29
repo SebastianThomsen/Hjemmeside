@@ -1,3 +1,6 @@
+
+<?php require_once 'app/backend/auth/cart.php'; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,18 +21,42 @@
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($_SESSION['shopping_cart'] as $item): ?>
-                    <tr>
-                        <td><?php echo $item['item_id']; ?></td>
-                        <td><?php echo $item['item_name']; ?></td>
-                        <td><?php echo $item['item_price']; ?></td>
-                        <td><?php echo $item['item_quantity']; ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    <?php else: ?>
-        <p>Your cart is empty.</p>
-    <?php endif; ?>
+            <?php
+require_once 'path/to/Database.php';
+$connect = Database::getConnection();
+
+// Start the session if it hasn't already been started
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+
+// Connect to the database
+$connect = mysqli_connect("localhost", "root", "", "DeFire");
+
+// Check the connection
+if ($connect->connect_error) {
+    die("Connection failed: " . $connect->connect_error);
+}
+
+// Get the user ID from the session
+$userid = $_SESSION['userid'];
+
+// Query the database for the items in the cart
+$sql = "SELECT * FROM cart WHERE user_id = $userid";
+$result = $connect->query($sql);
+
+// Check if the query returned any results
+if ($result->num_rows > 0) {
+    // Loop through the results and display each item
+    while($row = $result->fetch_assoc()) {
+        echo "Item ID: " . $row["item_id"] . "<br>";
+        echo "Quantity: " . $row["quantity"] . "<br>";
+        echo "<hr>";
+    }
+} 
+?>
+<?php else: ?>
+    <p>Your cart is empty.</p>
+<?php endif; ?>
 </body>
 </html>
