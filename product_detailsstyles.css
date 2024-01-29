@@ -117,3 +117,24 @@ body {
     -webkit-appearance: none;
     margin: 0;
 }
+
+@media only screen and (max-width: 768px) {
+    .product-details {
+        flex-direction: column; /* Ændrer flexboksens retning til kolonne */
+        margin-left: 10px;
+    }
+
+    .product-image img {
+        max-width: 400px;
+        height: auto;
+    }
+
+    .product-details .details {
+        margin-left: 0; /* Fjerner venstremargen for detaljerne */
+        margin-top: 20px;
+    }
+
+    .product-details .quantity-controls {
+        align-items: flex-start; /* Justerer justeringen af kontrolerne */
+    }
+}
