@@ -88,9 +88,6 @@ CREATE TABLE `cart` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
-
-
-
 CREATE TABLE `produkter` (
   `item_id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,

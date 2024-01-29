@@ -3,6 +3,7 @@
 class Database
 {
     public $con;
+    private static $connection;
     private static $_instance = null;
     private $_pdo,
             $_query,

@@ -1,5 +1,6 @@
 
-<?php require_once 'app/backend/auth/cart.php'; ?>
+<?php include_once 'app/backend/auth/cart.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,8 +23,8 @@
             </thead>
             <tbody>
             <?php
-require_once 'path/to/Database.php';
-$connect = Database::getConnection();
+            // Initialize the total price variable
+            $total = 0;
 
 // Start the session if it hasn't already been started
 if (session_status() == PHP_SESSION_NONE) {
@@ -38,8 +39,12 @@ if ($connect->connect_error) {
     die("Connection failed: " . $connect->connect_error);
 }
 
+$cartItems = getCartItems($userid, $connect); 
+
 // Get the user ID from the session
 $userid = $_SESSION['userid'];
+
+$cartItems = getCartItems($userid, $connect); 
 
 // Query the database for the items in the cart
 $sql = "SELECT * FROM cart WHERE user_id = $userid";

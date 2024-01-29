@@ -18,17 +18,27 @@
             }
         }
 
-        function addToCart(itemId, quantity) {
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", 'app/backend/auth/cart.php?id=' + itemId, true);
-            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-            xhr.onreadystatechange = function() {
-                if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
-                    alert(this.responseText);
-                }
-            }
-            xhr.send("quantity=" + quantity);
-        }
+        <?php
+function addToCart($itemId, $quantity) {
+    $url = 'app/backend/auth/cart.php?id=' . $itemId . '&quantity=' . $quantity;
+    $data = array('quantity' => $quantity);
+
+    $ch = curl_init($url);
+    curl_setopt($ch, CURLOPT_POST, 1);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($data));
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+
+    $result = curl_exec($ch);
+
+    if ($result === FALSE) {
+        echo 'Error: ' . curl_error($ch);
+    } else {
+        var_dump($result);
+    }
+
+    curl_close($ch);
+}
+?>
     </script>
 </head>
 
