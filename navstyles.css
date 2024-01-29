@@ -132,8 +132,34 @@
 
 /* Responsive styles for small screens */
 @media only screen and (max-width: 600px) {
-  .navbar-nav .nav-link {
-    font-size: 10px;
+  .navbar {
+    /* Add styles specific to the mobile navigation bar */
+    padding: 10px 0 !important; /* Adjusted padding for small screens */
   }
+
+  .navbar-toggler-icon {
+    font-size: 24px !important; /* Increase the font size of the toggler icon for small screens */
+    padding: 10px; /* Adjust padding around the toggler icon for better visibility */
+    background-color: #5EC1B7 !important; 
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+     }
+
+  .navbar-nav {
+    /* Add styles for the mobile navigation links */
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar-nav .nav-link {
+    /* Customize styles for mobile navigation links */
+    font-size: 14px;
+    padding: 8px 0;
+  }
+
+  .navbar-nav .nav-item {
+    margin-right: 0; /* Reset right margin for individual items on small screens */
+  }
+
+  /* Add any additional styles for small screens as needed */
 
 }
